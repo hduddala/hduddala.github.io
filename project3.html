@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Classification – Himesh Duddala</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Himesh Duddala</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+      </div>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </nav>
+  </header>
+
+  <!-- PROJECT DETAILS -->
+  <main>
+    <section class="project-details">
+      <div class="container">
+        <h2 class="section-title">Image Classification Model</h2>
+        <div class="project-content">
+          <div class="project-image-wrapper">
+            <img src="image-classification.jpg" alt="Image classification results" class="project-image" />
+          </div>
+          <div class="project-info">
+            <h3>Description</h3>
+            <p>
+              A convolutional-neural-network that classifies images into predefined
+              categories. Trained on a custom dataset, it achieves high accuracy
+              while maintaining fast inference times for real-world applications.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li>Data augmentation for robustness</li>
+              <li>Transfer learning with pre-trained backbones</li>
+              <li>Real-time webcam inference demo</li>
+            </ul>
+
+            <h3>Technologies Used</h3>
+            <p>Python • TensorFlow • Keras • OpenCV</p>
+
+            <h3>Project Links</h3>
+            <div class="button-group">
+              <a href="https://github.com/hduddala/image-classification" target="_blank" class="btn btn-primary">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Himesh Duddala. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
