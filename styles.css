@@ -1,23 +1,29 @@
 /* styles.css */
+@import url('https://fonts.cdnfonts.com/css/ocr-a-std');
 
 /* 1. Color Palette Variables */
 :root {
-  /* Cool Blue theme */
-  --grad-start: #00b4d8;
-  --grad-end:   #0077b6;
-  --bg-dark:    #0f172a;
-  --text-light: #f8fafc;
-  --accent:     #00b4d8;
-  --accent2:    #0077b6;
+  --grad-start: rgba(255,255,255,0.18); /* neutral cloudy highlight */
+  --grad-end:   rgba(255,255,255,0.06);
+  --bg-dark:    #0a0a0a; /* near-black */
+  --bg-elev-1:  rgba(255,255,255,0.06);
+  --bg-elev-2:  rgba(255,255,255,0.08);
+  --text-light: #eceef1;
+  --muted:      rgba(236,238,241,0.70);
+  --accent:     #d1d5db; /* neutral */
+  --accent2:    #9ca3af; /* neutral dim */
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  --font-heading: 'OCR A Std', 'OCR A', 'OCR A Extended', monospace;
 }
 body.light {
-  --bg-dark:      #f1f5f9;
-  --text-light:   #0f172a;
-  --accent:       #0077b6;
-  --accent2:      #00b4d8;
-  --projects-bg:  #f9fafb;
+  --bg-dark:      #f5f5f5;
+  --text-light:   #111827;
+  --accent:       #9333ea;
+  --accent2:      #1e3a8a;
+  --projects-bg:  #f5f5f5;
   --card-bg:      #ffffff;
-  --card-text:    #0f172a;
+  --card-text:    #111827;
 }
 
 /* 2. Reset & Base */
@@ -30,10 +36,56 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-dark);
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(900px 600px at 15% 10%, rgba(255,255,255,0.10), transparent),
+              radial-gradient(1200px 800px at 85% 0%, rgba(255,255,255,0.08), transparent),
+              radial-gradient(1000px 700px at 50% 100%, rgba(255,255,255,0.06), transparent),
+              var(--bg-dark);
   color: var(--text-light);
   line-height: 1.6;
+}
+
+/* Typography: apply OCR-A to headings, logo, and key UI elements */
+h1, h2, h3, .navbar .logo, .btn {
+  font-family: var(--font-heading), 'Poppins', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+/* Extend OCR-A to navigation links and general copy */
+.nav-links a,
+p,
+li,
+.sub,
+.project-subtitle,
+.tech-peek,
+.skill-item span,
+.tech-item span,
+.section-subheading,
+label,
+input,
+textarea {
+  font-family: var(--font-heading), 'Poppins', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* Glass utility for consistent glassmorphism */
+.glass {
+  background: var(--bg-elev-1);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 22px;
+  position: relative;
+}
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
 }
 
 /* 3. Navbar */
@@ -41,8 +93,11 @@ body {
   display: flex; 
   align-items: center; 
   justify-content: space-between;
-  padding: 1rem 5%; 
-  background: var(--bg-dark);
+  padding: .85rem 5%; 
+  background: rgba(10,10,10,0.55);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
   position: sticky; 
   top: 0; 
   z-index: 1000;
@@ -57,9 +112,16 @@ body {
   align-items: center;
 }
 .nav-links a {
-  color: var(--text-light); 
+  color: var(--muted); 
   text-decoration: none; 
   font-weight: 500;
+  padding: .5rem .75rem;
+  border-radius: 12px;
+  transition: background .2s ease, color .2s ease;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.10);
+  color: var(--text-light);
 }
 .theme-toggle, 
 .hamburger {
@@ -92,11 +154,20 @@ body {
 
 /* 4. Hero */
 .hero {
-  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  position: relative;
   color: #fff; 
   text-align: center; 
-  padding: 6rem 1rem;
+  padding: 7rem 1rem 5rem;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 320px at 20% 20%, rgba(255,255,255,0.18), transparent),
+              radial-gradient(800px 460px at 80% 10%, rgba(255,255,255,0.12), transparent);
+  pointer-events: none;
+}
+.hero .hero-content { max-width: 1000px; margin: 0 auto; }
 .hero-content h1 {
   font-size: 2.5rem; 
   margin-bottom: .5rem;
@@ -115,19 +186,20 @@ body {
 /* 5. Buttons */
 .btn {
   display: inline-block; 
-  padding: .75rem 1.5rem;
-  border-radius: 5px; 
+  padding: .8rem 1.2rem;
+  border-radius: 18px; 
   font-weight: 600; 
-  transition: transform .2s;
+  transition: transform .2s, box-shadow .2s;
   text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.28);
 }
 .btn-primary {
-  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  background: linear-gradient(180deg, var(--grad-start), var(--grad-end));
   color: #fff;
 }
 .btn-secondary {
-  background: transparent; 
-  border: 2px solid var(--text-light);
+  background: rgba(255,255,255,0.05); 
   color: var(--text-light);
 }
 .btn:hover {
@@ -149,11 +221,16 @@ body {
 }
 .intern-box {
   flex: 1;
-  background: rgba(255,255,255,0.05);
   padding: 1rem; 
-  border-radius: 8px; 
-  backdrop-filter: blur(5px);
+  border-radius: 22px;
+  background: var(--bg-elev-1);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  position: relative;
 }
+.intern-box::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%); pointer-events:none; mix-blend-mode: soft-light; }
 .intern-box h3 {
   margin-bottom: .5rem;
 }
@@ -165,12 +242,12 @@ body {
 /* 7. Projects Overview */
 .projects {
   padding: 4rem 1rem;
-  background: var(--bg-dark);
+  background: transparent;
 }
 .projects h2 {
   text-align: center; 
   font-size: 2.5rem; 
-  color: var(--accent);
+  color: #e5e7eb;
   margin-bottom: 2rem;
 }
 .project-grid {
@@ -183,16 +260,22 @@ body {
   display: flex; 
   flex-direction: column; 
   justify-content: space-between;
-  background: var(--card-bg, rgba(255,255,255,0.05));
+  background: var(--bg-elev-1);
   padding: 2rem; 
-  border-radius: 8px; 
+  border-radius: 22px; 
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  position: relative;
 }
+.project-card::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(180deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.02) 100%); pointer-events:none; mix-blend-mode: soft-light; }
 .project-card h3 {
   font-size: 1.5rem; 
   margin-bottom: 1rem; 
-  color: var(--card-text, #fff);
+  color: #f3f4f6;
 }
 .project-card p {
   color: var(--card-text, rgba(255,255,255,0.8)); 
@@ -220,7 +303,7 @@ body {
 }
 .project-title {
   font-size: 2.75rem; 
-  color: var(--accent); 
+  color: #e5e7eb; 
   margin-bottom: .5rem;
 }
 .project-subtitle {
@@ -233,6 +316,9 @@ body {
   background-size: cover; 
   background-position: center;
   margin-bottom: 2.5rem;
+  border-radius: 22px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 .project-container {
   max-width: 1000px; 
@@ -254,14 +340,20 @@ body {
   margin-bottom: 2.5rem;
 }
 .feature-card {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elev-1);
   padding: 1.5rem; 
-  border-radius: 8px; 
+  border-radius: 22px; 
   text-align: center;
   transition: transform .2s ease, box-shadow .2s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  position: relative;
 }
+.feature-card::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%); pointer-events:none; mix-blend-mode: soft-light; }
 .feature-card h4 {
-  color: var(--accent); 
+  color: #e5e7eb; 
   margin-bottom: .75rem;
 }
 .feature-card p {
@@ -279,7 +371,7 @@ body {
 .project-tech .section-subheading {
   text-align: center; 
   font-size: 1.8rem; 
-  color: var(--accent);
+  color: #e5e7eb;
   margin-bottom: 1rem;
 }
 .project-tech .tech-grid {
@@ -309,16 +401,53 @@ body {
   margin-bottom: 3rem;
 }
 
+/* Project detail composite layout (used in image-classification page) */
+.project-content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 900px) {
+  .project-content { grid-template-columns: 1fr; }
+}
+.project-image-wrapper {
+  background: var(--bg-elev-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  padding: 1rem;
+}
+.project-image {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.project-info {
+  background: var(--bg-elev-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+.project-info h3 { color: #e5e7eb; margin: .75rem 0 .5rem; }
+.project-info ul { margin-left: 1.25rem; }
+.button-group { display: flex; gap: .75rem; margin-top: 1rem; }
+
 /* 9. Skills Grid */
 .skills {
   padding: 4rem 1rem; 
-  background: var(--bg-dark);
+  background: transparent;
 }
 .skills h2 {
   text-align: center; 
   font-size: 2.5rem; 
   margin-bottom: 2rem; 
-  color: var(--accent);
+  color: #e5e7eb;
 }
 .skill-grid {
   display: grid; 
@@ -328,15 +457,21 @@ body {
   align-items: center;
 }
 .skill-item {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elev-1);
   padding: 1rem; 
-  border-radius: 8px; 
+  border-radius: 22px; 
   text-align: center;
   transition: transform .2s;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  position: relative;
 }
+.skill-item::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(180deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%); pointer-events:none; mix-blend-mode: soft-light; }
 .skill-item i {
   font-size: 2.5rem; 
-  color: var(--accent); 
+  color: #d1d5db; 
   margin-bottom: .5rem;
 }
 .skill-item span {
@@ -364,11 +499,17 @@ body {
   margin: 0 auto;
 }
 .edu-list li {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elev-1);
   padding: 1rem; 
-  border-radius: 8px; 
+  border-radius: 22px; 
   margin-bottom: 1rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  position: relative;
 }
+.edu-list li::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(180deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%); pointer-events:none; mix-blend-mode: soft-light; }
 
 /* 11. Contact & Resume */
 .contact {
@@ -385,15 +526,20 @@ body {
 .resume-card, 
 .contact-card {
   flex: 1; 
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elev-1);
   padding: 2rem; 
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  position: relative;
 }
+.resume-card::before, .contact-card::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(180deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%); pointer-events:none; mix-blend-mode: soft-light; }
 .resume-card h2, 
 .contact-card h2 {
   margin-bottom: 1rem; 
-  color: var(--accent);
+  color: #e5e7eb;
 }
 .resume-card .btn {
   width: 100%; 
@@ -405,11 +551,11 @@ body {
 }
 .social-links a {
   font-size: 1.4rem; 
-  color: var(--text-light);
+  color: #d1d5db;
   transition: color .2s;
 }
 .social-links a:hover {
-  color: var(--accent);
+  color: #f3f4f6;
 }
 .contact-card .form-group {
   margin-bottom: 1rem;
@@ -417,18 +563,18 @@ body {
 .contact-card input, 
 .contact-card textarea {
   width: 100%; 
-  padding: .75rem;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 5px; 
-  background: transparent;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px; 
+  background: rgba(255,255,255,0.02);
   color: #fff; 
   font-size: 1rem;
-  transition: border-color .2s;
+  transition: border-color .2s, background .2s;
 }
 .contact-card input:focus, 
 .contact-card textarea:focus {
   outline: none; 
-  border-color: var(--accent);
+  border-color: rgba(255,255,255,0.35);
 }
 .contact-card button {
   width: 100%; 
@@ -442,7 +588,10 @@ body {
 
 /* 12. Footer */
 footer {
-  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  background: rgba(10,10,10,0.55);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-top: 1px solid rgba(255,255,255,0.10);
   text-align: center; 
   padding: 1rem; 
   margin-top: 2rem;
