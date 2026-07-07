@@ -2,204 +2,318 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Himesh Duddala – CS Junior &amp; AI/ML Maker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Himesh Duddala — AI/ML & Software Engineer</title>
+  <meta name="description" content="Himesh Duddala ships production AI systems end-to-end — from multi-tenant LLM pipelines to LangGraph multi-agent systems and GNN research used by NOAA/VIMS. Software & AI/ML engineer based in the DC metro." />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Himesh Duddala — AI/ML & Software Engineer" />
+  <meta property="og:description" content="I ship production AI systems, not demos. Three concurrent AI/software roles, real users and researchers depending on the systems I build." />
+  <meta name="theme-color" content="#f5f1ea" />
 
-  <!-- Devicon for tech icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <!-- Favicon: monogram -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23171512'/%3E%3Ctext x='50' y='68' font-family='Space Grotesk, sans-serif' font-size='54' font-weight='700' fill='%23ff4a1c' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
 
-  <!-- Font Awesome & Google Fonts -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Himesh Duddala</div>
-      <div class="nav-links" id="navLinks">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" class="theme-toggle">🌙</button>
-      </div>
-      <button class="hamburger" id="hamburger">&#9776;</button>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo"><span class="nav__mark">H</span>Himesh&nbsp;Duddala</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="mailto:hduddala@gmu.edu" class="nav__cta">Get in touch</a>
     </nav>
+    <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>
-        Hi, I'm <strong>Himesh Duddala</strong><br />
-        <span class="sub">CS Junior &amp; AI Enthusiast</span>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero__eyebrow reveal">Software &amp; AI/ML Engineer · DC Metro</p>
+      <h1 class="hero__title reveal">
+        I ship <span class="mark">production AI systems</span>,<br />
+        not demos.
       </h1>
-      <p>Building smart solutions with code and data.</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="HimeshDuddala_Resume.pdf" download class="btn btn-secondary">Download Resume</a>
+      <p class="hero__lead reveal">
+        In one year I've gone from prompt-injection-guarded LLM pipelines on a
+        multi-tenant Laravel platform, to LangGraph multi-agent systems holding
+        <strong>99.5% uptime</strong> in low-connectivity field environments, to
+        graph-neural-network research whose outputs are used by
+        <strong>NOAA / VIMS</strong> teams. Most new grads bring coursework and a
+        toy project. I bring three concurrent roles' worth of systems that real
+        users and researchers depend on.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#work" class="btn btn--solid">See the work</a>
+        <a href="HimeshDuddala_Resume.pdf" class="btn btn--ghost" download>Résumé (PDF)</a>
       </div>
-    </div>
-  </section>
-
-  <!-- ABOUT + INTERNSHIPS -->
-  <section id="about" class="about">
-    <div class="container about-container">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          Hi, I'm Himesh Duddala, a Computer Science junior fueled by curiosity and a passion for AI/ML. I love turning data into insights, tackling real-world problems with smart solutions, and learning new technologies every day. Dependable, collaborative, and always up for a challenge, I'm ready to bring energy and fresh ideas to my next internship.
-        </p>
-      </div>
-      <div class="intern-box">
-        <h3>🔍 Looking for</h3>
-        <ul>
-          <li>Software Engineer Intern</li>
-          <li>AI/ML Intern</li>
-          <li>NLP Research Intern</li>
-          <li>Data Science Intern</li>
-        </ul>
-        <p>💼 Available: May-August 2025</p>
-      </div>
-    </div>
-  </section>
-
-<!-- PROJECTS -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <!-- Project 1 -->
-      <div class="project-card">
-        <h3>EcoSphere</h3>
-        <p>An AI-powered platform for environmental sustainability.</p>
-        <div class="tech-peek">Tech: Python, TensorFlow, Flask, React</div>
-        <a href="project1.html" class="btn btn-primary">View Project</a>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h3>FinWise AI</h3>
-        <p>Your smart financial assistant for clarity &amp; confidence.</p>
-        <div class="tech-peek">Tech: Python, Flask, React</div>
-        <a href="project2.html" class="btn btn-primary">View Project</a>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card">
-        <h3>Image Classification</h3>
-        <p>CNN-based image classifier for real-world datasets.</p>
-        <div class="tech-peek">Tech: Python, TensorFlow, Keras</div>
-        <a href="project3.html" class="btn btn-primary">View Project</a>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card">
-        <h3>Replic-AI / BrandPilot</h3>
-        <p>AI social media agent that monitors, replies, and posts for startups.</p>
-        <div class="tech-peek">Tech: Next.js, React, TypeScript, Python, FastAPI, Supabase</div>
-        <a href="project4.html" class="btn btn-primary">View Project</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- SKILLS & TECH STACK -->
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2>My Skills &amp; Tech Stack</h2>
-      <div class="skill-grid">
-        <!-- Front-end & Frameworks -->
-        <div class="skill-item tilt"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
-        <div class="skill-item tilt"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
-        <div class="skill-item tilt"><i class="devicon-react-original colored"></i><span>React</span></div>
-        <div class="skill-item tilt"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
-
-        <!-- Core & Markup -->
-        <div class="skill-item tilt"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-        <div class="skill-item tilt"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-        <div class="skill-item tilt"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-
-        <!-- Tools & Databases -->
-        <div class="skill-item tilt"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-        <div class="skill-item tilt"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-
-        <!-- DevOps & Cloud -->
-        <div class="skill-item tilt"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
-        <div class="skill-item tilt"><i class="devicon-amazonwebservices-plain colored"></i><span>AWS</span></div>
-        <div class="skill-item tilt"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education" class="education">
-    <div class="container">  
-      <h2>Education &amp; Experience</h2>
-      <ul class="edu-list">
-        <li>
-          <h3>George Mason University</h3>
-          <p>B.S. Computer Science, expected May 2026</p>
-          <p><strong>Relevant Coursework:</strong> Machine Learning, Data Structures &amp; Algorithms, NLP</p>
-        </li>
+      <ul class="hero__meta reveal">
+        <li><span class="dot"></span>Open to SWE / AI-ML roles</li>
+        <li>Remote · Hybrid · Will relocate</li>
+        <li>Authorized to work — F-1 STEM OPT</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- RESUME + CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container contact-container">
-      <!-- Resume Card -->
-      <div class="resume-card">
-        <h2>Resume</h2>
-        <a href="HimeshDuddala_Resume.pdf" download class="btn btn-primary">Download Resume</a>
-        <div class="social-links">
-          <a href="https://github.com/hduddala" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/himesh-duddala" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/Himeshrd" target="_blank"><i class="fab fa-twitter"></i></a>
+    <!-- NOW STRIP -->
+    <section class="now reveal">
+      <div class="now__label"><span>NOW</span> — building at three places at once</div>
+      <div class="now__grid">
+        <div class="now__item">
+          <span class="now__org">Inroads LLC</span>
+          <span class="now__role">Software Engineer — sole developer, Content&nbsp;Rush</span>
+        </div>
+        <div class="now__item">
+          <span class="now__org">William &amp; Mary · CCI</span>
+          <span class="now__role">Oceanic AI Research Fellow — CV + GNN research</span>
+        </div>
+        <div class="now__item">
+          <span class="now__org">Kashmir World Foundation</span>
+          <span class="now__role">Agentic AI Intern — LangGraph digital twins</span>
         </div>
       </div>
-      <!-- Contact Card -->
-      <div class="contact-card">
-        <h2>Contact Me</h2>
-        <form>
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Himesh Duddala. All rights reserved.</p>
-    </div>
+    <!-- EXPERIENCE -->
+    <section id="work" class="section">
+      <header class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2 class="section__title">Experience</h2>
+        <p class="section__sub">Four roles, three running concurrently right now.</p>
+      </header>
+
+      <ol class="exp">
+        <li class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__when">Jun 2026 — Present</span>
+            <span class="exp__where">Frederick, MD</span>
+          </div>
+          <div class="exp__body">
+            <h3 class="exp__role">Software Engineer <span class="exp__tag">Sole Developer</span></h3>
+            <p class="exp__org">Inroads LLC — <em>Content Rush</em></p>
+            <p class="exp__desc">
+              Sole engineer building an AI-powered social-media distribution
+              platform on Laravel + Vue.js — owning architecture through deployment.
+            </p>
+            <ul class="exp__points">
+              <li>Multi-tenant data isolation via Eloquent global scopes, enforced by scoping tests.</li>
+              <li>AI content-drafting service gated by a CI quality check — structure, banned-word, prompt-injection, and LLM-judged brand-voice scoring.</li>
+              <li>OAuth multi-platform publishing (LinkedIn, Facebook, Instagram, X, TikTok) with encrypted token storage.</li>
+              <li>Scheduled publishing + analytics on Laravel Horizon / Redis with idempotency and overdue-post detection.</li>
+              <li>Resumable chunked, direct-to-object-storage upload pipeline for large video.</li>
+            </ul>
+            <div class="exp__stack">Laravel · PHP · Vue.js · Redis · Horizon · OAuth · LLM pipelines</div>
+          </div>
+        </li>
+
+        <li class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__when">Jan 2026 — Present</span>
+            <span class="exp__where">Williamsburg, VA</span>
+          </div>
+          <div class="exp__body">
+            <h3 class="exp__role">Oceanic AI Research Fellow</h3>
+            <p class="exp__org">William &amp; Mary — Commonwealth Cyber Initiative (CCI)</p>
+            <p class="exp__desc">
+              Computer-vision and graph-learning research on marine imagery, trained
+              on an HPC cluster — with outputs used by VIMS / NOAA teams.
+            </p>
+            <ul class="exp__points">
+              <li>CV pipeline for marine imagery combining YOLOv8 detection with graph neural networks.</li>
+              <li>Adversarial-robustness work hardening models against perturbed inputs.</li>
+              <li>GNN biomass modeling; trained on A100 GPUs via SLURM/HPC.</li>
+            </ul>
+            <div class="exp__stack">PyTorch · YOLOv8 · GNNs · Adversarial training · HPC / SLURM · A100</div>
+          </div>
+        </li>
+
+        <li class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__when">Jan 2026 — Present</span>
+            <span class="exp__where">Fairfax, VA</span>
+          </div>
+          <div class="exp__body">
+            <h3 class="exp__role">Agentic AI Intern <span class="exp__tag">Digital Twin Systems</span></h3>
+            <p class="exp__org">Kashmir World Foundation</p>
+            <p class="exp__desc">
+              Multi-agent workflows for a 50-node LoRa mesh network — resilient enough
+              to hold 99.5% uptime in low-connectivity field environments.
+            </p>
+            <ul class="exp__points">
+              <li>LangGraph multi-agent orchestration for automated sensor diagnostics and anomaly detection.</li>
+              <li>Fault-tolerant RAG deployed across AWS / Azure for field resilience.</li>
+            </ul>
+            <div class="exp__stack">LangGraph · Multi-agent · RAG · AWS · Azure · LoRa mesh</div>
+          </div>
+        </li>
+
+        <li class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__when">May 2024 — Aug 2024</span>
+            <span class="exp__where">Vijayawada, India</span>
+          </div>
+          <div class="exp__body">
+            <h3 class="exp__role">Full-Stack Software Engineering Intern</h3>
+            <p class="exp__org">Rise Consultancy</p>
+            <p class="exp__desc">
+              Shipped features and REST APIs for an admissions platform, end to end.
+            </p>
+            <ul class="exp__points">
+              <li>JWT auth + role-based access control (RBAC).</li>
+              <li>Containerized deploys via Docker + GitLab CI/CD to AWS.</li>
+            </ul>
+            <div class="exp__stack">Node.js · REST · JWT · Docker · GitLab CI/CD · AWS</div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <header class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2 class="section__title">Selected Projects</h2>
+        <p class="section__sub">Things I built outside of work, start to finish.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="card__kicker">Hackathon flagship · HackPrinceton 2025</span>
+            <h3 class="card__title">Replic-AI / BrandPilot</h3>
+          </div>
+          <p class="card__desc">
+            An AI social-media agent that keeps early-stage startups active online
+            without a full-time marketer. Monitors X and Reddit for brand mentions,
+            auto-drafts on-brand replies and daily posts, and lets founders approve,
+            edit, or reject them straight from iMessage.
+          </p>
+          <div class="card__stack">Next.js · FastAPI · Supabase · Redis · xAI Grok · Composio</div>
+          <div class="card__links">
+            <a href="project4.html">Case study →</a>
+            <a href="https://github.com/hduddala/replic-ai" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://devpost.com/software/replic-ai" target="_blank" rel="noopener">Devpost</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="card__kicker">AI · NLP</span>
+            <h3 class="card__title">Real-Time Conversational Fact Checker</h3>
+          </div>
+          <p class="card__desc">
+            A chatbot that fact-checks claims live in Slack/Discord conversations.
+            Detects and classifies claims with Hugging Face Transformers, verifies
+            them against Google Knowledge Graph and Wikipedia, and returns credible
+            sources in under two seconds.
+          </p>
+          <div class="card__stack">Python · Hugging Face · NER · Knowledge Graph · Wikipedia API</div>
+          <div class="card__links">
+            <a href="https://github.com/hduddala" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <header class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2 class="section__title">Toolkit</h2>
+        <p class="section__sub">What I reach for, grouped by where it lives.</p>
+      </header>
+
+      <div class="skills reveal">
+        <div class="skills__group">
+          <h4>Languages</h4>
+          <p>Python · Java · C · C++ · JavaScript / TypeScript · SQL · Bash · R · PHP</p>
+        </div>
+        <div class="skills__group">
+          <h4>AI / ML</h4>
+          <p>PyTorch · TensorFlow · Hugging Face · LangChain · LangGraph · scikit-learn · YOLOv8 · GNNs · XGBoost · RAG · multi-agent orchestration · adversarial training</p>
+        </div>
+        <div class="skills__group">
+          <h4>Web &amp; Frameworks</h4>
+          <p>React · Next.js · Node / Express · FastAPI · Flask · Spring Boot · Laravel · Vue.js</p>
+        </div>
+        <div class="skills__group">
+          <h4>Data &amp; Infra</h4>
+          <p>PostgreSQL · Supabase · Redis · Laravel Horizon · vector / RAG retrieval</p>
+        </div>
+        <div class="skills__group">
+          <h4>Cloud &amp; DevOps</h4>
+          <p>AWS (EC2, RDS, S3) · Azure · Docker · HPC / SLURM (A100) · GitLab CI · GitHub Actions</p>
+        </div>
+        <div class="skills__group">
+          <h4>Practices</h4>
+          <p>Multi-tenant architecture · OAuth / JWT + RBAC · event / queue pipelines · idempotency &amp; exactly-once delivery · prompt-injection guarding · LLM-as-judge quality gates</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <header class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2 class="section__title">About</h2>
+      </header>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I'm Himesh — a software and AI/ML engineer who cares about the parts most
+            people skip: the idempotency, the quality gates, the integrity tests that
+            keep a system standing once real users and researchers depend on it.
+          </p>
+          <p>
+            I finished my B.S. in Computer Science at
+            <strong>George Mason University</strong> (GPA 3.6) with coursework in
+            Machine Learning, NLP, Algorithms, Operating Systems, and Secure
+            Programming. Outside the day-to-day I mentored students as a Learning
+            Assistant and Undergraduate TA — teaching Python and debugging is still
+            the fastest way I've found to sharpen my own fundamentals.
+          </p>
+          <ul class="about__facts">
+            <li><span>Education</span> B.S. Computer Science, George Mason University · GPA 3.6</li>
+            <li><span>Based in</span> Fairfax, VA (DC metro) · open to relocating in the US</li>
+            <li><span>Work auth</span> F-1 student on STEM OPT · authorized to work now</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact reveal">
+      <h2 class="contact__title">Let's build something that lasts.</h2>
+      <p class="contact__sub">
+        I'm looking for SWE and AI/ML roles. If you've got a system that needs to
+        actually hold up in production, I'd like to hear about it.
+      </p>
+      <a href="mailto:hduddala@gmu.edu" class="contact__email">hduddala@gmu.edu</a>
+      <div class="contact__links">
+        <a href="https://github.com/hduddala" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/hduddala" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="HimeshDuddala_Resume.pdf" download>Résumé</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Himesh Duddala</span>
+    <span>Designed &amp; built from scratch — Fairfax, VA</span>
   </footer>
 
-  <!-- Vanilla-Tilt for the tilt effect -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

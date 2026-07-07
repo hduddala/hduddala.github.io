@@ -2,154 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Replic-AI / BrandPilot – Himesh Duddala</title>
-
-  <link rel="stylesheet" href="styles.css?v=7" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Replic-AI / BrandPilot — Himesh Duddala</title>
+  <meta name="description" content="Replic-AI (BrandPilot): an AI social-media agent that monitors, drafts, and posts for early-stage startups, with chat-native approvals. Built at HackPrinceton 2025." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23171512'/%3E%3Ctext x='50' y='68' font-family='Space Grotesk, sans-serif' font-size='54' font-weight='700' fill='%23ff4a1c' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="project.css?v=10" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Himesh Duddala</div>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html#hero">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#skills">Skills</a>
-        <a href="index.html#education">Education</a>
-        <a href="index.html#contact">Contact</a>
-        <button id="themeToggle" class="theme-toggle">🌙</button>
-      </div>
-      <button class="hamburger" id="hamburger">&#9776;</button>
+  <header class="nav" id="nav">
+    <a href="index.html#top" class="nav__logo"><span class="nav__mark">H</span>Himesh&nbsp;Duddala</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html#work">Experience</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:hduddala@gmu.edu" class="nav__cta">Get in touch</a>
     </nav>
+    <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
   </header>
 
-  <!-- PROJECT SPECIFIC TITLE -->
-  <section class="project-title-section">
-    <div class="container glass" style="padding:1.25rem;border-radius:22px;">
-      <h1 class="project-title">Replic-AI / BrandPilot</h1>
-      <p class="project-subtitle">AI Social Media Agent for Startups</p>
-    </div>
-  </section>
+  <main class="proj">
+    <a href="index.html#projects" class="proj__back">← Back to projects</a>
 
-  <!-- HERO IMAGE -->
-  <section
-    class="project-hero"
-    style="background-image:url('replic.png');">
-  </section>
+    <header class="proj__head reveal">
+      <span class="proj__kicker">Hackathon flagship · HackPrinceton 2025</span>
+      <h1 class="proj__title">Replic-AI / BrandPilot</h1>
+      <p class="proj__tagline">An AI social-media agent that keeps startups active online — no full-time marketer required.</p>
+      <div class="proj__links">
+        <a href="https://github.com/hduddala/replic-ai" target="_blank" rel="noopener" class="btn btn--solid">GitHub</a>
+        <a href="https://devpost.com/software/replic-ai" target="_blank" rel="noopener" class="btn btn--ghost">Devpost</a>
+      </div>
+    </header>
 
-  <!-- ALL THE PROJECT DETAILS -->
-  <main>
-    <div class="project-container">
-      <!-- Description -->
-      <section class="project-description glass" style="padding:1.25rem;border-radius:22px;">
+    <img src="replic.png" alt="Replic-AI dashboard" class="proj__hero reveal" />
+
+    <div class="proj__body">
+      <section class="proj__block reveal">
+        <h2>Overview</h2>
         <p>
-          Replic-AI (BrandPilot) is an AI-powered social media agent that helps early-stage startups 
-          maintain an active and authentic online presence without a full-time marketer. The system 
-          monitors X (Twitter) and Reddit for brand mentions and keywords, automatically generating 
-          on-brand replies and daily posts. Built in a weekend at HackPrinceton 2025, it features 
-          a multi-brand dashboard with real-time activity logs and chat-native approval workflows 
-          that let founders approve, edit, or reject posts directly from iMessage.
+          Replic-AI (BrandPilot) helps early-stage startups maintain an active,
+          authentic online presence without hiring a marketer. It monitors X and
+          Reddit for brand mentions and keywords, auto-generates on-brand replies and
+          daily posts, and routes everything through a founder for approval — from a
+          multi-brand dashboard or straight from iMessage. Built in a weekend at
+          HackPrinceton 2025.
         </p>
       </section>
 
-      <!-- Features -->
-      <section class="project-features">
-        <div class="features-grid">
-          <div class="feature-card">
-            <h4>Social Media Monitoring</h4>
-            <p>Continuously monitors X and Reddit for brand mentions and relevant keywords.</p>
-          </div>
-          <div class="feature-card">
-            <h4>AI Content Generation</h4>
-            <p>Auto-generates on-brand replies and daily posts using xAI Grok for authentic engagement.</p>
-          </div>
-          <div class="feature-card">
-            <h4>Multi-Brand Dashboard</h4>
-            <p>Real-time activity logs and management interface built with Next.js and Supabase.</p>
-          </div>
-          <div class="feature-card">
-            <h4>Chat-Native Approvals</h4>
-            <p>Founders can approve, edit, or reject posts directly from iMessage via Photon/WhatsApp APIs.</p>
-          </div>
-          <div class="feature-card">
-            <h4>FastAPI Backend</h4>
-            <p>Robust Python backend with Redis caching for efficient data processing and API responses.</p>
-          </div>
-          <div class="feature-card">
-            <h4>Composio Integration</h4>
-            <p>Seamless workflow automation connecting social platforms and messaging services.</p>
-          </div>
+      <section class="proj__block reveal">
+        <h2>What it does</h2>
+        <div class="proj__features">
+          <div><h3>Social monitoring</h3><p>Continuously watches X and Reddit for brand mentions and relevant keywords.</p></div>
+          <div><h3>AI content generation</h3><p>Drafts on-brand replies and daily posts with xAI Grok for authentic engagement.</p></div>
+          <div><h3>Multi-brand dashboard</h3><p>Real-time activity logs and management built on Next.js + Supabase.</p></div>
+          <div><h3>Chat-native approvals</h3><p>Founders approve, edit, or reject posts directly from iMessage.</p></div>
+          <div><h3>FastAPI backend</h3><p>Python backend with Redis caching for efficient processing and fast responses.</p></div>
+          <div><h3>Composio integration</h3><p>Workflow automation linking social platforms and messaging services.</p></div>
         </div>
       </section>
 
-      <!-- Technologies -->
-      <section class="project-tech glass" style="padding:1.25rem;border-radius:22px;">
-        <h2 class="section-subheading">Technologies</h2>
-        <div class="tech-grid">
-          <div class="tech-item">
-            <i class="devicon-react-original colored"></i><span>React</span>
-          </div>
-          <div class="tech-item">
-            <i class="devicon-typescript-plain colored"></i><span>TypeScript</span>
-          </div>
-          <div class="tech-item">
-            <i class="devicon-nodejs-plain colored"></i><span>Next.js</span>
-          </div>
-          <div class="tech-item">
-            <i class="devicon-python-plain colored"></i><span>Python</span>
-          </div>
-          <div class="tech-item">
-            <i class="devicon-amazonwebservices-plain colored"></i><span>Supabase</span>
-          </div>
-          <div class="tech-item">
-            <i class="fas fa-database colored" style="color: #d1d5db;"></i><span>Redis</span>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 1rem; color: var(--text-light);">
-          <p>FastAPI • xAI Grok • Composio • Photon API • WhatsApp API</p>
-        </div>
-      </section>
-
-      <!-- CTAs -->
-      <section class="project-ctas">
-        <a
-          href="https://github.com/hduddala/replic-ai"
-          target="_blank"
-          class="btn btn-primary"
-          >GitHub Repo</a
-        >
-        <a
-          href="https://devpost.com/software/replic-ai"
-          target="_blank"
-          class="btn btn-secondary"
-          >View on Devpost</a
-        >
+      <section class="proj__block reveal">
+        <h2>Stack</h2>
+        <p class="proj__stack">Next.js · React · TypeScript · Python · FastAPI · Supabase · Redis · xAI Grok · Composio · WhatsApp API</p>
       </section>
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Himesh Duddala. All rights reserved.</p>
-    </div>
+  <footer class="footer">
+    <span>© 2026 Himesh Duddala</span>
+    <span>Fairfax, VA</span>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>
-
